@@ -6,6 +6,10 @@ Created on Thu Sep 29 15:51:59 2022
 """
 import pandas as pd
 import numpy as np
+from zipfile import ZipFile
+
+with ZipFile('Preprocessed_data.zip', 'r') as file:
+    file.extract("Preprocessed_data.csv")
 
 data = pd.read_csv("Preprocessed_data.csv")
 data.dropna(inplace=True)
